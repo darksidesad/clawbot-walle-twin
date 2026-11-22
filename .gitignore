@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+server/node_modules/
+client/node_modules/
+
+# Build outputs
+dist/
+server/dist/
+client/dist/
+*.tsbuildinfo
+
+# Environment & secrets
+.env
+.env.*
+!.env.example
+
+# Runtime mission logs & local video production workspace
+mission-logs/
+deliverables/
+
+# Logs & caches
+*.log
+npm-debug.log*
+.vite/
+coverage/
+
+# OS & editor files
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json

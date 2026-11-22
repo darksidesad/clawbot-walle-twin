@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #050811;
+    color: #e2e8f0;
+    font-family: 'Space Grotesk', Inter, system-ui, -apple-system, sans-serif;
+  }
+}
+
+.walle-bg {
+  background-color: #050811;
+  background-image:
+    radial-gradient(ellipse 60% 45% at 18% -5%, rgba(245, 158, 11, 0.11), transparent 65%),
+    radial-gradient(ellipse 55% 40% at 85% -5%, rgba(34, 211, 238, 0.11), transparent 65%),
+    linear-gradient(rgba(148, 163, 184, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.025) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
+}
+
+.panel-surface {
+  background: linear-gradient(180deg, rgba(14, 21, 37, 0.9) 0%, rgba(9, 14, 25, 0.95) 100%);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 12px 32px -12px rgba(0, 0, 0, 0.65);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(5, 8, 17, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.24);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.42);
+}
+
+@keyframes eq-bar {
+  0%,
+  100% {
+    transform: scaleY(0.3);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+.eq-bar {
+  transform-origin: bottom;
+  animation: eq-bar 0.65s ease-in-out infinite;
+}
+
+@keyframes float-up-particle {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.65);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-165px) translateX(-14px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+.animate-float-particle {
+  animation: float-up-particle 2.4s ease-out forwards;
+}

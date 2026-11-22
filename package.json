@@ -1,0 +1,17 @@
+{
+  "name": "clawbot-walle",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ClawBot WALL-E Twin — 60fps 3D Sim-to-Real Digital Twin of a $25 DIY Mini WALL-E Robot powered by OpenClaw Gateway and Cerebras",
+  "scripts": {
+    "install:all": "npm --prefix server install && npm --prefix client install",
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev",
+    "dev": "node -e \"const { spawn } = require('node:child_process'); const opts = { stdio: 'inherit', shell: true }; const s = spawn('npm --prefix server run dev', opts); const c = spawn('npm --prefix client run dev', opts); const stop = () => { s.kill(); c.kill(); process.exit(0); }; process.on('SIGINT', stop); process.on('SIGTERM', stop);\"",
+    "build": "npm --prefix server run build && npm --prefix client run build",
+    "test": "npm --prefix server test",
+    "start:server": "npm --prefix server run start",
+    "gateway:status": "openclaw gateway status",
+    "gateway:start": "openclaw gateway run --port 18789 --bind loopback"
+  }
+}
